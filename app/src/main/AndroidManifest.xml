@@ -12,6 +12,9 @@
         android:theme="@style/Theme.EnergieElevate"
         tools:targetApi="31">
         <activity
+            android:name=".activity_pregunta_2"
+            android:exported="false" />
+        <activity
             android:name=".activity_pregunta_uno"
             android:exported="false" />
         <activity

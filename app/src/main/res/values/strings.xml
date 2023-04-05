@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EnergieElevate</string>
+    <string-array name="opciones_spinner">
+        <item>Opción 1</item>
+        <item>Opción 2</item>
+        <item>Opción 3</item>
+    </string-array>
+
 </resources>
