@@ -4,67 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_pregunta_uno"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo"
+    tools:context=".activity_pregunta_uno">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/edtPregunta1"
         android:layout_width="366dp"
         android:layout_height="82dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="10dp"
         android:gravity="center"
         android:text="¿Cual es tu objetivo Físico?"
         android:textColorHint="#000000"
         android:textSize="29dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="130dp" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spObjetivo"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="312dp" />
 
     <Button
-        android:id="@+id/btnSig"
+        android:id="@+id/btnSig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
+        android:background="@drawable/borde_reondo2"
         android:text="SIGUIENTE"
-        android:background="@drawable/borde_reondo2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.869" />
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="604dp" />
 
     <Button
-        android:id="@+id/btnRegre"
+        android:id="@+id/btnRegre1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="<-"
         android:background="@drawable/borde_reondo2"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        android:text="<-"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="31dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

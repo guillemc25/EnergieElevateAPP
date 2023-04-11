@@ -8,7 +8,7 @@
     tools:context=".activity_registro">
 
     <EditText
-        android:id="@+id/edtNombre5"
+        android:id="@+id/edtContra"
         android:layout_width="263dp"
         android:layout_height="50dp"
         android:layout_marginStart="74dp"
@@ -21,10 +21,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNombre4" />
+        app:layout_constraintTop_toBottomOf="@+id/edtCorreoReg" />
 
     <EditText
-        android:id="@+id/edtNombre4"
+        android:id="@+id/edtCorreoReg"
         android:layout_width="263dp"
         android:layout_height="50dp"
         android:layout_marginStart="74dp"
@@ -37,10 +37,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNombre3" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuarioReg" />
 
     <EditText
-        android:id="@+id/edtNombre3"
+        android:id="@+id/edtUsuarioReg"
         android:layout_width="263dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegistrarse"
         android:layout_width="251dp"
         android:layout_height="69dp"
         android:layout_marginTop="44dp"
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNombre5"
+        app:layout_constraintTop_toBottomOf="@+id/edtContra"
         app:layout_constraintVertical_bias="0.039" />
 
 
