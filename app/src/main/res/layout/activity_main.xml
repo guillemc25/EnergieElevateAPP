@@ -57,7 +57,7 @@
         android:id="@+id/txtReg"
         style="@android:style/Widget.Material.Light.TextView.SpinnerItem"
         android:layout_width="254dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:text="¿No tienes cuentas? Registrate"
         android:textColor="#030B12"
         android:textStyle="italic"

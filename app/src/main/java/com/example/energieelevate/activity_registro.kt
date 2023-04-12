@@ -8,14 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
-abstract class activity_registro : AppCompatActivity() {
+ class activity_registro : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         supportActionBar?.hide()
-        RegistrarUsuario();
+
 
     }
     fun RegistrarUsuario() {
@@ -23,15 +23,15 @@ abstract class activity_registro : AppCompatActivity() {
         val editTextNombre = findViewById<EditText>(R.id.edtNombre);
         val editTextApellido= findViewById<EditText>(R.id.edtApellido);
         val editTextUsuario= findViewById<EditText>(R.id.edtUsuarioReg);
-        val EditTextCorreo= findViewById<EditText>(R.id.edtCorreo);
+        val EditTextCorreo= findViewById<EditText>(R.id.edtCorreoReg);
         val EditTextContraseña= findViewById<EditText>(R.id.edtContra);
 
         // Obtiene los valores ingresados por el usuario
         val nombre: String = editTextNombre.text.toString();
         val apellido: String = editTextApellido.text.toString();
         val usuario: String = editTextUsuario.text.toString();
-        val correo: String = EditTextCorreo.getText().toString()
-        val contraseña: String = EditTextContraseña.getText().toString()
+        val correo: String = EditTextCorreo.text.toString()
+        val contraseña: String = EditTextContraseña.text.toString()
 
         // Crea un objeto ContentValues con los valores a insertar
         val valores = ContentValues()
