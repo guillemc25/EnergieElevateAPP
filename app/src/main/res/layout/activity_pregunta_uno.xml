@@ -9,40 +9,61 @@
 
     <TextView
         android:id="@+id/edtPregunta1"
-        android:layout_width="366dp"
-        android:layout_height="82dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="86dp"
         android:gravity="center"
         android:text="¿Cual es tu objetivo Físico?"
         android:textColorHint="#000000"
-        android:textSize="29dp"
+        android:textSize="29sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="130dp" />
+        app:layout_constraintBottom_toTopOf="@+id/spObjetivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegre1" />
 
     <Spinner
         android:id="@+id/spObjetivo"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="312dp" />
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="244dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSig1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPregunta1"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnSig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="159dp"
         android:background="@drawable/borde_reondo2"
         android:text="SIGUIENTE"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="604dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spObjetivo" />
 
     <Button
         android:id="@+id/btnRegre1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/borde_reondo2"
-        android:text="<-"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="31dp" />
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="138dp"
+        android:background="@drawable/flecha_negra_izquierda"
+        app:layout_constraintBottom_toTopOf="@+id/edtPregunta1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

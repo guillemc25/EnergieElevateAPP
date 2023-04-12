@@ -14,12 +14,12 @@ abstract class activity_registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-
+        supportActionBar?.hide()
         RegistrarUsuario();
 
     }
     fun RegistrarUsuario() {
-        // inicializamos los views en el código
+        // inicializamos los views al  código
         val editTextNombre = findViewById<EditText>(R.id.edtNombre);
         val editTextApellido= findViewById<EditText>(R.id.edtApellido);
         val editTextUsuario= findViewById<EditText>(R.id.edtUsuarioReg);
