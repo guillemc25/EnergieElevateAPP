@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNombre"
-        app:layout_constraintVertical_bias="0.273" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <EditText
         android:id="@+id/edtNombre"
@@ -63,10 +63,10 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintVertical_bias="0.341" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
