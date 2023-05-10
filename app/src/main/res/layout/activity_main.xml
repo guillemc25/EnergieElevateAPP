@@ -12,7 +12,7 @@
         android:id="@+id/edtCorreo"
         android:layout_width="260dp"
         android:layout_height="50dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/borde_redondo"
         android:ems="10"
         android:gravity="center"
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNombre"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <EditText
         android:id="@+id/edtNombre"
@@ -66,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintVertical_bias="0.253" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
