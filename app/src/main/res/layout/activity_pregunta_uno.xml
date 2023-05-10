@@ -9,61 +9,41 @@
 
     <TextView
         android:id="@+id/edtPregunta1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="86dp"
+        android:layout_width="372dp"
+        android:layout_height="83dp"
         android:gravity="center"
         android:text="¿Cual es tu objetivo Físico?"
         android:textColorHint="#000000"
         android:textSize="29sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spObjetivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegre1" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="127dp" />
 
     <Spinner
         android:id="@+id/spObjetivo"
 
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="244dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSig1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPregunta1"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_width="183dp"
+        android:layout_height="43dp"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="267dp" />
 
     <Button
         android:id="@+id/btnSig1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="159dp"
         android:background="@drawable/borde_reondo2"
         android:text="SIGUIENTE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spObjetivo" />
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="517dp" />
 
     <Button
         android:id="@+id/btnRegre1"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="285dp"
-        android:layout_marginBottom="138dp"
         android:background="@drawable/flecha_negra_izquierda"
-        app:layout_constraintBottom_toTopOf="@+id/edtPregunta1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
