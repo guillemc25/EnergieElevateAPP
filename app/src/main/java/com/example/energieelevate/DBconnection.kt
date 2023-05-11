@@ -1,49 +1,87 @@
 package com.example.energieelevate
 
-import java.sql.*
+import android.database.sqlite.SQLiteDatabase
+import android.content.Context
+import android.database.sqlite.SQLiteOpenHelper
 
-class DBConnection {
-    private val url = "db4free.net"
-    private val username = "guille"
-    private val password = "ManzaGuille789"
-    private var connection: Connection? = null
+    class DBconnection(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
-    fun connect(): Connection? {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver")
-            connection = DriverManager.getConnection(url, username, password)
-        } catch (e: SQLException) {
-            e.printStackTrace()
-        } catch (e: ClassNotFoundException) {
-            e.printStackTrace()
+        companion object {
+            const val DATABASE_VERSION = 1
+            const val DATABASE_NAME = "energie_elevate.db"
+
         }
-        return connection
-    }
 
-    fun disconnect() {
-        connection?.close()
-    }
+        override fun onCreate(db: SQLiteDatabase?) {
+            db?.execSQL("PRAGMA foreign_keys=ON;")
 
-    fun InsertarUsuario(nombre: String, apellidos: String, nombreUsuario: String, correoElectronico: String, contrasena: String): Boolean {
-        var success = false
-        val sql = "INSERT INTO usuario (Nombre, Apellidos, Usuario, Correo_Electronico, Contrasena) VALUES (?, ?, ?, ?, ?)"
-        try {
-            val conn = connect()
-            val stmt = conn?.prepareStatement(sql)
-            stmt?.setString(1, nombre)
-            stmt?.setString(2, apellidos)
-            stmt?.setString(3, nombreUsuario)
-            stmt?.setString(4, correoElectronico)
-            stmt?.setString(5, contrasena)
-            val rows = stmt?.executeUpdate()
-            if (rows != null && rows > 0) {
-                success = true
-            }
-            disconnect()
-        } catch (e: SQLException) {
-            e.printStackTrace()
+            db?.execSQL(
+                "CREATE TABLE Usuario (" +
+                        "IDusuario INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "Nombre TEXT," +
+                        "Apellidos TEXT," +
+                        "NombreUsuario TEXT," +
+                        "CorreoElectornico TEXT, " +
+                        "Contraseña TEXT" +
+                        ")"
+            )
+
+            db?.execSQL(
+                "CREATE TABLE Alimento_comidas (" +
+                        "IDalimento_comida INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "NombreAlimento TEXT," +
+                        " Descripcion_alimento TEXT," +
+                        "Grasas_100g INTEGER," +
+                        "Proteina_100g INTEGER," +
+                        "Carbohidratos_100g INTEGER,"+
+                        "Calorias_100g INTEGER"+
+                        ")"
+            )
+
+            db?.execSQL(
+                "CREATE TABLE Ejercicio (" +
+                        "IDejercicio INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "Nombre_ejercicio TEXT," +
+                        "grupo_muscular TEXT," +
+                        "categoria INTEGER" +
+                        ")"
+            )
+
+            db?.execSQL(
+                "CREATE TABLE Rutinas_ejercicios (" +
+                        "IDrutina INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "Descripcion_rutina TEXT," +
+                        "fecha_creacion DATE," +
+                        "Duracion_estimada INTEGER," +
+                        "Nivel_dificultad INTEGER" +
+                        ")"
+            )
+            db?.execSQL(
+                "CREATE TABLE Rutina_ejercicio (" +
+                        "IDrutina INTEGER, " +
+                        "IDejercicio INTEGER," +
+                        "FOREIGN KEY (IDrutina) REFERENCES Rutina_ejercicios(IDrutina),"+
+                        "FOREIGN KEY (IDejercicio) REFERENCES Ejercicio(IDejercicio)" +
+
+                        ")"
+            )
+            db?.execSQL(
+                "CREATE TABLE datos_fisico(" +
+                        "IDusuario INTEGER, " +
+                        "Altura DOUBLE," +
+                        "Objetivo_fisico TEXT," +
+                        "Peso_kg DOUBLE" +
+                        ")"
+            )
+
+
+
+
+
         }
-        return success
-    }
 
-}
+        override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
+            TODO("Not yet implemented")
+        }
+
+    }

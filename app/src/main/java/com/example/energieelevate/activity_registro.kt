@@ -1,6 +1,7 @@
 package com.example.energieelevate
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.Button
@@ -13,18 +14,17 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         supportActionBar?.hide()
 
-
-
             val btnRegistrar = findViewById<Button>(R.id.btnRegistrarse);
 
-        btnRegistrar.setOnClickListener{
+             btnRegistrar.setOnClickListener{
 
-            Registrar();
+                Registrar();
 
         }
 
@@ -42,9 +42,7 @@ import androidx.appcompat.app.AppCompatActivity
          val correoElectronicoEditText = findViewById<EditText>(R.id.edtCorreoReg)
          val contrasenaEditText = findViewById<EditText>(R.id.edtContra)
 
-         // Obtener referencia al botón de registro y configurar el listener de click
-         val registroButton = findViewById<Button>(R.id.btnRegistrarse)
-         registroButton.setOnClickListener {
+
              val nombre = nombreEditText.text.toString()
              val apellidos = apellidosEditText.text.toString()
              val nombreUsuario = nombreUsuarioEditText.text.toString()
@@ -69,10 +67,13 @@ import androidx.appcompat.app.AppCompatActivity
              contrasenaEditText.text.clear()
 
              db.close();
+
+             val i = Intent(this, activity_pregunta_uno::class.java)
+             startActivity(i)
          }
      }
 
 
-     }
+
 
 

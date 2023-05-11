@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         btnIniciarSesion.setOnClickListener {
             IniciarSesion();
+            val i = Intent(this, pantalla_principal::class.java)
+            startActivity(i)
+
         }
         val txtReg= findViewById<TextView>(R.id.txtReg);
         //Al hacer click al texto de registrarse iremos al activity registro

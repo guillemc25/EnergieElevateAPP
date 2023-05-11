@@ -11,22 +11,26 @@
         android:id="@+id/edtPregunta1"
         android:layout_width="372dp"
         android:layout_height="83dp"
+        android:layout_marginTop="72dp"
         android:gravity="center"
         android:text="¿Cual es tu objetivo Físico?"
         android:textColorHint="#000000"
         android:textSize="29sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="127dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegre1" />
 
     <Spinner
         android:id="@+id/spObjetivo"
 
         android:layout_width="183dp"
-        android:layout_height="43dp"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="267dp" />
+        android:layout_height="48dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPregunta1"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnSig1"
@@ -34,16 +38,22 @@
         android:layout_height="wrap_content"
         android:background="@drawable/borde_reondo2"
         android:text="SIGUIENTE"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="517dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spObjetivo" />
 
     <Button
         android:id="@+id/btnRegre1"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="343dp"
         android:background="@drawable/flecha_negra_izquierda"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
