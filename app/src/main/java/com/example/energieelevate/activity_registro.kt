@@ -31,40 +31,48 @@ import androidx.appcompat.app.AppCompatActivity
 
     }
      fun Registrar (){
-         //instanciamos los views al codigo
-         val edtNombre= findViewById<EditText>(R.id.edtNombre);
-         val edtApellido= findViewById<EditText>(R.id.edtApellido);
-         val edtUsuarioReg= findViewById<EditText>(R.id.edtUsuarioReg);
-         val edtCorreoReg= findViewById<EditText>(R.id.edtCorreoReg);
-         val edtContra= findViewById<EditText>(R.id.edtContra);
 
-         //recogemos el texto de los views
-         val nombre = edtNombre.text.toString()
-         val apellidos = edtApellido.text.toString()
-         val nombreUsuario = edtUsuarioReg.text.toString();
-         val correoElectronico= edtCorreoReg.text.toString();
-         val contrasena= edtContra.text.toString();
+         // Obtener una instancia de la base de datos
+         var db = DBconnection(this).writableDatabase
 
-         //instanciamos la clase de la base de datos
-         val db = DBConnection();
-         //realizamos conexion
-         val conn = db.connect()
-         if (conn != null) {
-             val success = db.InsertarUsuario(nombre, apellidos, nombreUsuario, correoElectronico, contrasena)
-             if (success) {
-                 Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
+         // Obtener referencias a los EditText del layout
+         val nombreEditText = findViewById<EditText>(R.id.edtNombre)
+         val apellidosEditText = findViewById<EditText>(R.id.edtApellido)
+         val nombreUsuarioEditText = findViewById<EditText>(R.id.edtUsuarioReg)
+         val correoElectronicoEditText = findViewById<EditText>(R.id.edtCorreoReg)
+         val contrasenaEditText = findViewById<EditText>(R.id.edtContra)
 
-             } else {
-                 Toast.makeText(this, "El usuario no sea podido conectar", Toast.LENGTH_SHORT).show()
+         // Obtener referencia al botón de registro y configurar el listener de click
+         val registroButton = findViewById<Button>(R.id.btnRegistrarse)
+         registroButton.setOnClickListener {
+             val nombre = nombreEditText.text.toString()
+             val apellidos = apellidosEditText.text.toString()
+             val nombreUsuario = nombreUsuarioEditText.text.toString()
+             val correoElectronico = correoElectronicoEditText.text.toString()
+             val contrasena = contrasenaEditText.text.toString()
 
-             }
-             db.disconnect()
-         } else {
-             // Error al conectarse a la base de datos
+             // Crear la sentencia SQL INSERT para insertar el nuevo usuario
+             val insertSql = "INSERT INTO Usuario (Nombre, Apellidos, NombreUsuario, CorreoElectornico, Contraseña) " +
+                     "VALUES ('$nombre', '$apellidos', '$nombreUsuario', '$correoElectronico', '$contrasena')"
+
+             // Ejecutar la sentencia SQL INSERT en la base de datos
+             db.execSQL(insertSql)
+
+             // Mostrar un mensaje indicando que el usuario se ha registrado correctamente
+             Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
+
+             // Limpiar los EditText
+             nombreEditText.text.clear()
+             apellidosEditText.text.clear()
+             nombreUsuarioEditText.text.clear()
+             correoElectronicoEditText.text.clear()
+             contrasenaEditText.text.clear()
+
+             db.close();
          }
+     }
 
 
      }
 
 
-}
