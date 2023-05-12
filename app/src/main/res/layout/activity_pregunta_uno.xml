@@ -7,28 +7,35 @@
     android:background="@drawable/fondo"
     tools:context=".activity_pregunta_uno">
 
+
     <TextView
         android:id="@+id/edtPregunta1"
         android:layout_width="372dp"
         android:layout_height="83dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="¿Cual es tu objetivo Físico?"
         android:textColorHint="#000000"
         android:textSize="29sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegre1" />
 
     <Spinner
         android:id="@+id/spObjetivo"
-
-        android:layout_width="183dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="274dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/spinner_fondo"
+        android:popupBackground="@drawable/spinner_fondo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/edtPregunta1"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -41,7 +48,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spObjetivo" />
+        app:layout_constraintTop_toBottomOf="@+id/spObjetivo"
+        app:layout_constraintVertical_bias="0.414" />
 
     <Button
         android:id="@+id/btnRegre1"
@@ -54,6 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
