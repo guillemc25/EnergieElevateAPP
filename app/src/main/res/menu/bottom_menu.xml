@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/Rutinas"
+        android:icon="@drawable/icono_rutina"
+
+        />
+
+    <item
+        android:id="@+id/pantallaPrincipal"
+        android:icon="@drawable/icono_pantalla_principal"
+        />
+
+    <item
+        android:id="@+id/Ejercicio"
+        android:icon="@drawable/icono_ejercicio"
+      />
+</menu>
+
