@@ -7,7 +7,117 @@
     android:background="#E2EAFF"
     tools:context=".pantalla_principal">
 
+    <TextView
+        android:id="@+id/txtDesayuno9"
+        android:layout_width="148dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="41dp"
+        android:background="@drawable/square_background"
+        app:layout_constraintBottom_toTopOf="@+id/txtCena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtDesayuno8"
+        app:layout_constraintTop_toBottomOf="@+id/txtComida" />
+
+    <TextView
+        android:id="@+id/txtDesayuno8"
+        android:layout_width="148dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="42dp"
+        android:background="@drawable/square_background"
+        app:layout_constraintBottom_toTopOf="@+id/txtDMerienda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesayuno" />
+
+    <TextView
+        android:id="@+id/txtComida"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="42dp"
+        android:background="@drawable/square_background"
+        android:gravity="center"
+        android:text="Comida"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtDesayuno9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtDesayuno"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDMerienda"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/square_background"
+        android:gravity="center"
+        android:text="Merienda"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesayuno8" />
+
+    <TextView
+        android:id="@+id/txtCena"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/square_background"
+        android:gravity="center"
+        android:text="Cena"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesayuno9" />
+
+    <TextView
+        android:id="@+id/txtDesayuno4"
+        android:layout_width="148dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/square_background"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDMerienda" />
+
+    <TextView
+        android:id="@+id/txtDesayuno2"
+        android:layout_width="148dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/square_background"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCena" />
+
+    <TextView
+        android:id="@+id/txtDesayuno"
+        android:layout_width="150dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="275dp"
+        android:background="@drawable/square_background"
+        android:gravity="center"
+        android:text="Desayuno"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtDesayuno8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#D1D1D1"
@@ -16,8 +126,8 @@
         app:itemIconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
