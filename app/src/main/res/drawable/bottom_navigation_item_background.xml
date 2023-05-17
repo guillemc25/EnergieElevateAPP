@@ -2,14 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="true">
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF" /> <!-- Color de fondo para el ítem seleccionado -->
-            <stroke android:color="#000000" android:width="2dp" />
+            <solid android:color="#62646A" /> <!-- Color de fondo para el ítem seleccionado -->
+
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF" /> <!-- Color de fondo para el ítem no seleccionado -->
-            <stroke android:color="#000000" android:width="2dp" /> <!-- Color y ancho del borde para el ítem no seleccionado -->
+            <solid android:color="#62646A" /> <!-- Color de fondo para el ítem no seleccionado -->
+
 
         </shape>
     </item>
