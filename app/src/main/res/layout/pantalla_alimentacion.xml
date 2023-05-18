@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
 
 
     >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="394dp"
+        android:layout_height="622dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="318dp"
         android:layout_height="63dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/borde_redondo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="391dp"
-        android:layout_height="688dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
