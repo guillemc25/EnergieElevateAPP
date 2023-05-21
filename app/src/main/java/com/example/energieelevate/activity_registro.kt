@@ -56,6 +56,7 @@ import androidx.appcompat.app.AppCompatActivity
              // Ejecutar la sentencia SQL INSERT en la base de datos
              db.execSQL(insertSql)
 
+
              // Mostrar un mensaje indicando que el usuario se ha registrado correctamente
              Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
 

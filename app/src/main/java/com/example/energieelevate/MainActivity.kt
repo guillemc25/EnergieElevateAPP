@@ -21,8 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         btnIniciarSesion.setOnClickListener {
             IniciarSesion();
-            val i = Intent(this, pantalla_principal::class.java)
-            startActivity(i)
+
 
         }
         val txtReg= findViewById<TextView>(R.id.txtReg);
@@ -58,6 +57,8 @@ class MainActivity : AppCompatActivity() {
 // Verificar si se encontró un usuario con la información proporcionada
         if (cursor.moveToFirst()) {
             Toast.makeText(this, "Inicio de sesion satisfactorio", Toast.LENGTH_SHORT).show()
+            val i = Intent(this, pantalla_principal::class.java)
+            startActivity(i)
         } else {
             Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show()
 
