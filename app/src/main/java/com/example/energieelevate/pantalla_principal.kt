@@ -16,8 +16,11 @@ import androidx.core.content.ContextCompat
 class pantalla_principal : AppCompatActivity() {
 
 
-    var sumaCalorias = 0
+    var caloriasTotales=0;
     var nombresConcatenados="";
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +34,9 @@ class pantalla_principal : AppCompatActivity() {
         agregarIconoClickeableMerienda()
         agregarIconoClickeableCena()
 
-        RecogerCalorias()
+        val textViewCaloriasCero = findViewById<TextView>(R.id.txtCaloriasTotales)
 
+        textViewCaloriasCero.text= "0"
 
     }
 
@@ -143,14 +147,23 @@ class pantalla_principal : AppCompatActivity() {
     }
 
     private fun RecogerCalorias() {
-        val sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE)
-        sumaCalorias = sharedPreferences.getInt("sumaCalorias", 0)
         val textViewCalorias = findViewById<TextView>(R.id.txtCaloriasTotales)
-        textViewCalorias.text = sumaCalorias.toString()
+        val sharedPreferencesDesayuno = getSharedPreferences("CaloriasDesayuno", Context.MODE_PRIVATE)
+        val sharedPreferencesComida = getSharedPreferences("CaloriasComida", Context.MODE_PRIVATE)
+        val sharedPreferencesMerienda = getSharedPreferences("CaloriasMerienda", Context.MODE_PRIVATE)
+        val sharedPreferencesCena = getSharedPreferences("CaloriasCena", Context.MODE_PRIVATE)
+
+        val sumaCaloriasDesayuno = sharedPreferencesDesayuno.getInt("sumaCaloriasDesayuno", 0)
+        val sumaCaloriasComida = sharedPreferencesComida.getInt("sumaCaloriasComida", 0)
+        val sumaCaloriasMerienda = sharedPreferencesMerienda.getInt("sumaCaloriasMerienda", 0)
+        val sumaCaloriasCena = sharedPreferencesCena.getInt("sumaCaloriasCena", 0)
+
+        caloriasTotales = sumaCaloriasDesayuno + sumaCaloriasComida + sumaCaloriasMerienda + sumaCaloriasCena
+
+        textViewCalorias.text = caloriasTotales.toString()
     }
 
-    override fun onResume() {
-        super.onResume()
+    fun RecogerNombreALimentos(){
         val txtNombreAlimentosDesayuno = findViewById<TextView>(R.id.txtComidasDesayuno)
 
         val AliementosDesayuno = getSharedPreferences("AlimentosDesayuno", MODE_PRIVATE)
@@ -175,6 +188,13 @@ class pantalla_principal : AppCompatActivity() {
         nombresConcatenados = AliementosCena.getString("nombresConcatenados", "").toString()
         txtNombreAlimentosCena.text = nombresConcatenados
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        RecogerCalorias()
+        RecogerNombreALimentos()
 
 
     }

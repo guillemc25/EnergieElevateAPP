@@ -20,27 +20,40 @@
 
     <Button
         android:id="@+id/btn_volver_pp"
-        android:layout_width="44dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="41dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/flecha_negra_izquierda"
-        app:layout_constraintBottom_toTopOf="@+id/lstAlimentos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="12dp"
         android:text="Comida"
         android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_volver_pp" />
+
+    <Button
+        android:id="@+id/btnEliminarComida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/borde_reondo2"
+        android:text="Eliminar Alimentos"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/lstAlimentos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
-        app:layout_constraintStart_toEndOf="@+id/btn_volver_pp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

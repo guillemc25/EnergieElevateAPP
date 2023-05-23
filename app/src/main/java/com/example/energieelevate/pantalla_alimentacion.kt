@@ -1,12 +1,14 @@
 package com.example.energieelevate
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
 import android.widget.SearchView
+import android.widget.Toast
 
 
 class pantalla_alimentacion : AppCompatActivity() {
@@ -24,6 +26,24 @@ class pantalla_alimentacion : AppCompatActivity() {
 
             val intent = Intent(this, pantalla_principal::class.java)
             startActivity(intent)
+
+        }
+
+        val btnEliminarComida = findViewById<Button>(R.id.btnEliminarComida)
+
+        btnEliminarComida.setOnClickListener {
+
+            val sharedPreferences = this.getSharedPreferences("CaloriasComida", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            val sharedPreferences2 = this.getSharedPreferences("AlimentosComida", Context.MODE_PRIVATE)
+            val editor2 = sharedPreferences2.edit()
+            editor2.clear()
+            editor2.apply()
+
+            Toast.makeText(this, "Alimentos eliminados", Toast.LENGTH_SHORT).show()
 
         }
 

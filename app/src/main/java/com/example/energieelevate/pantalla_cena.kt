@@ -1,9 +1,13 @@
 package com.example.energieelevate
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
+import android.widget.Toast
 
 class pantalla_cena : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -11,6 +15,31 @@ class pantalla_cena : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_cena)
         supportActionBar?.hide()
+
+        val btnRegreCena = findViewById<Button>(R.id.btnRegreCena)
+
+        btnRegreCena.setOnClickListener{
+
+            val intent = Intent(this, pantalla_principal::class.java)
+            startActivity(intent)
+        }
+
+        val btnEliminarCena = findViewById<Button>(R.id.btnEliminarCena)
+
+        btnEliminarCena.setOnClickListener {
+
+            val sharedPreferences = this.getSharedPreferences("CaloriasCena", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            val sharedPreferences2 = this.getSharedPreferences("AlimentosCena", Context.MODE_PRIVATE)
+            val editor2 = sharedPreferences2.edit()
+            editor2.clear()
+            editor2.apply()
+
+            Toast.makeText(this, "Alimentos eliminados", Toast.LENGTH_SHORT).show()
+        }
 
         // Obtén una lista de alimentos
         val listaAlimentos = obtenerListaDeAlimentos()

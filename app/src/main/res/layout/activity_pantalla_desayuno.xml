@@ -11,36 +11,52 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="136dp"
-        android:text="Desayuno:"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnVolverDesayuno"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:text="Desayuno"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVolverDesayuno" />
 
     <ListView
         android:id="@+id/lstAlimentoDesayuno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <Button
         android:id="@+id/btnVolverDesayuno"
-        android:layout_width="40dp"
-        android:layout_height="32dp"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/flecha_negra_izquierda"
         app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.24" />
+
+    <Button
+        android:id="@+id/btnEliminarDesayuno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="124dp"
+        android:background="@drawable/borde_redondo"
+        android:text="Eliminar Alimentos"
+        android:textColor="#050505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,9 +54,9 @@ class AlimentoAdapterDesayuno(context: Context, private val alimentoList: List<A
             }
 
             // Guardar la suma de calorías en SharedPreferences
-            val sharedPreferences = context.getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE)
+            val sharedPreferences = context.getSharedPreferences("CaloriasDesayuno", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
-            editor.putInt("sumaCalorias", sumaCalorias)
+            editor.putInt("sumaCaloriasDesayuno", sumaCalorias)
             editor.apply()
 
             // Guardar la cadena concatenada en SharedPreferences
