@@ -3,8 +3,6 @@ package com.example.energieelevate
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
 import android.widget.*
 
 class activity_pregunta_uno : AppCompatActivity() {

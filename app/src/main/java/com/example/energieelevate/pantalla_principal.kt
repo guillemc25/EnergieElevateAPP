@@ -8,63 +8,190 @@ import android.text.*
 import android.text.method.LinkMovementMethod
 import android.text.style.*
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 
 class pantalla_principal : AppCompatActivity() {
+
+
+    var sumaCalorias = 0
+    var nombresConcatenados="";
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_principal)
         supportActionBar?.hide()
 
-        // Obtiene la referencia al TextView con el ID en el diseño XML.
-        val txtDesayuno = findViewById<TextView>(R.id.txtDesayuno)
-        val txtComida = findViewById<TextView>(R.id.txtComida)
-        val txtMerienda = findViewById<TextView>(R.id.txtDMerienda)
-        val txtCena = findViewById<TextView>(R.id.txtCena)
 
-        agregarIconoClickeable(this,txtDesayuno,"Desayuno                          ")
-        agregarIconoClickeable(this,txtComida,"Comida                             ")
-        agregarIconoClickeable(this,txtMerienda,"Merienda                          ")
-        agregarIconoClickeable(this,txtCena, "Cena                                 ")
+
+        agregarIconoClickeableDesayuno()
+        agregarIconoClickeableComida()
+        agregarIconoClickeableMerienda()
+        agregarIconoClickeableCena()
+
+        RecogerCalorias()
 
 
     }
 
-    fun agregarIconoClickeable(context: Context, textView: TextView, Texto:String) {
-        //Creamos un objeto SpannableStringBuilder y lo inicializamos con el texto proporcionado.
-        val spannableStringBuilder = SpannableStringBuilder(Texto)
-        //Obtenemos el recurso de imagen boton_mas como un objeto Drawable utilizando el contexto actual.
+    private fun agregarIconoClickeableDesayuno() {
+        val txtDesayuno = findViewById<TextView>(R.id.txtDesayuno)
+        val spannableStringBuilder = SpannableStringBuilder("Desayuno                         ")
         val drawable = ContextCompat.getDrawable(this, R.drawable.boton_mas)
-        //Obtenemos el ancho deseado del icono desde los recursos (dimen/icon_width).
         val width = resources.getDimensionPixelSize(R.dimen.icon_width)
-        //Obtenemos el alto deseado del icono desde los recursos (dimen/icon_height).
         val height = resources.getDimensionPixelSize(R.dimen.icon_height)
-        //Establecemos los límites del drawable para controlar el tamaño del icono.
         drawable?.setBounds(0, 0, width, height)
-        // Creamos un objeto ImageSpan utilizando el drawable y lo alineamos en la parte inferior del texto.
         val imageSpan = ImageSpan(drawable!!, ImageSpan.ALIGN_BOTTOM)
 
-        // Creamos un objeto ClickableSpan anónimo que define el comportamiento al hacer clic en el icono.
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
-                val intent = Intent(context, pantalla_alimentacion::class.java)
+                val intent = Intent(this@pantalla_principal, pantalla_desayuno::class.java)
                 startActivity(intent)
+
+
+
 
             }
         }
-        //Establecemos el ImageSpan en la posición del último carácter del texto.
+
         spannableStringBuilder.setSpan(imageSpan, spannableStringBuilder.length - 1,
             spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        //Establecemos el ClickableSpan en la posición del último carácter del texto.
         spannableStringBuilder.setSpan(clickableSpan, spannableStringBuilder.length - 1,
             spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        //Configuramos el TextView para que sea clickeable.
-        textView.movementMethod = LinkMovementMethod.getInstance()
-        //asigna el texto formateado con iconos y comportamientos clickeables al TextView.
-        textView.text = spannableStringBuilder
+        txtDesayuno.movementMethod = LinkMovementMethod.getInstance()
+        txtDesayuno.text = spannableStringBuilder
     }
 
+    private fun agregarIconoClickeableMerienda() {
+        val txtMerienda = findViewById<TextView>(R.id.txtDMerienda)
+        val spannableStringBuilder = SpannableStringBuilder("Merienda                          ")
+        val drawable = ContextCompat.getDrawable(this, R.drawable.boton_mas)
+        val width = resources.getDimensionPixelSize(R.dimen.icon_width)
+        val height = resources.getDimensionPixelSize(R.dimen.icon_height)
+        drawable?.setBounds(0, 0, width, height)
+        val imageSpan = ImageSpan(drawable!!, ImageSpan.ALIGN_BOTTOM)
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(view: View) {
+                val intent = Intent(this@pantalla_principal, pantalla_merienda::class.java)
+                startActivity(intent)
+            }
+        }
+
+        spannableStringBuilder.setSpan(imageSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.setSpan(clickableSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        txtMerienda.movementMethod = LinkMovementMethod.getInstance()
+        txtMerienda.text = spannableStringBuilder
+    }
+
+    private fun agregarIconoClickeableComida() {
+        val txtComida = findViewById<TextView>(R.id.txtComida)
+        val spannableStringBuilder = SpannableStringBuilder("Comida                             ")
+        val drawable = ContextCompat.getDrawable(this, R.drawable.boton_mas)
+        val width = resources.getDimensionPixelSize(R.dimen.icon_width)
+        val height = resources.getDimensionPixelSize(R.dimen.icon_height)
+        drawable?.setBounds(0, 0, width, height)
+        val imageSpan = ImageSpan(drawable!!, ImageSpan.ALIGN_BOTTOM)
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(view: View) {
+                val intent = Intent(this@pantalla_principal, pantalla_alimentacion::class.java)
+                startActivity(intent)
+
+
+            }
+        }
+
+        spannableStringBuilder.setSpan(imageSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.setSpan(clickableSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        txtComida.movementMethod = LinkMovementMethod.getInstance()
+        txtComida.text = spannableStringBuilder
+    }
+
+    private fun agregarIconoClickeableCena() {
+        val txtCena = findViewById<TextView>(R.id.txtCena)
+        val spannableStringBuilder = SpannableStringBuilder("Cena                                 ")
+        val drawable = ContextCompat.getDrawable(this, R.drawable.boton_mas)
+        val width = resources.getDimensionPixelSize(R.dimen.icon_width)
+        val height = resources.getDimensionPixelSize(R.dimen.icon_height)
+        drawable?.setBounds(0, 0, width, height)
+        val imageSpan = ImageSpan(drawable!!, ImageSpan.ALIGN_BOTTOM)
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(view: View) {
+                val intent = Intent(this@pantalla_principal, pantalla_cena::class.java)
+                startActivity(intent)
+            }
+        }
+
+        spannableStringBuilder.setSpan(imageSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableStringBuilder.setSpan(clickableSpan, spannableStringBuilder.length - 1,
+            spannableStringBuilder.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        txtCena.movementMethod = LinkMovementMethod.getInstance()
+        txtCena.text = spannableStringBuilder
+    }
+
+    private fun RecogerCalorias() {
+        val sharedPreferences = getSharedPreferences("MiSharedPreferences", Context.MODE_PRIVATE)
+        sumaCalorias = sharedPreferences.getInt("sumaCalorias", 0)
+        val textViewCalorias = findViewById<TextView>(R.id.txtCaloriasTotales)
+        textViewCalorias.text = sumaCalorias.toString()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val txtNombreAlimentosDesayuno = findViewById<TextView>(R.id.txtComidasDesayuno)
+
+        val AliementosDesayuno = getSharedPreferences("AlimentosDesayuno", MODE_PRIVATE)
+        nombresConcatenados = AliementosDesayuno.getString("nombresConcatenados", "").toString()
+        txtNombreAlimentosDesayuno.text = nombresConcatenados
+
+        val txtNombreAlimentosComida = findViewById<TextView>(R.id.txtComidas_comida)
+
+        val AliementosComida = getSharedPreferences("AlimentosComida", MODE_PRIVATE)
+        nombresConcatenados = AliementosComida.getString("nombresConcatenados", "").toString()
+        txtNombreAlimentosComida.text = nombresConcatenados
+
+        val txtNombreAlimentosMerienda = findViewById<TextView>(R.id.txtComida_merienda)
+
+        val AliementosMerienda = getSharedPreferences("AlimentosMerienda", MODE_PRIVATE)
+        nombresConcatenados = AliementosMerienda.getString("nombresConcatenados", "").toString()
+        txtNombreAlimentosMerienda.text = nombresConcatenados
+
+        val txtNombreAlimentosCena = findViewById<TextView>(R.id.txtComida_cena)
+
+        val AliementosCena = getSharedPreferences("AlimentosCena", MODE_PRIVATE)
+        nombresConcatenados = AliementosCena.getString("nombresConcatenados", "").toString()
+        txtNombreAlimentosCena.text = nombresConcatenados
+
+
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

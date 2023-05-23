@@ -1,12 +1,14 @@
 package com.example.energieelevate
 
+import android.widget.Button
+
 data class Alimento(
     val nombre: String,
-    val descripcion: String,
-    val grasas: Int,
-    val proteina: Int,
-    val carbohidratos: Int,
-    val calorias: Int
+
+    val CantidadMarca: String,
+    val calorias: String,
 
 
-)
+
+
+    )

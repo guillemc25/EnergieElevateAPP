@@ -7,25 +7,40 @@
     android:background="#4A4C51"
     tools:context=".pantalla_alimentacion">
 
-    <SearchView
-        android:id="@+id/BuscarAlimentos"
-        android:layout_width="309dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/borde_lista"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ListView
         android:id="@+id/lstAlimentos"
-        android:layout_width="392dp"
-        android:layout_height="621dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BuscarAlimentos" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <Button
+        android:id="@+id/btn_volver_pp"
+        android:layout_width="44dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/flecha_negra_izquierda"
+        app:layout_constraintBottom_toTopOf="@+id/lstAlimentos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="152dp"
+        android:text="Comida"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toEndOf="@+id/btn_volver_pp"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,47 +1,29 @@
 package com.example.energieelevate
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ListView
-import android.widget.SearchView
 
-
-class pantalla_alimentacion : AppCompatActivity() {
-
+class pantalla_merienda : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_alimentacion)
+        setContentView(R.layout.activity_pantalla_merienda)
         supportActionBar?.hide()
-
-
-        val btnVolver= findViewById<Button>(R.id.btn_volver_pp)
-
-        btnVolver.setOnClickListener{
-
-            val intent = Intent(this, pantalla_principal::class.java)
-            startActivity(intent)
-
-        }
-
-
 
         // Obtén una lista de alimentos
         val listaAlimentos = obtenerListaDeAlimentos()
 
         // Crea una instancia del adaptador pasando la lista de alimentos
-        val alimentoAdapterDesayuno = AlimentoAdapterComida(this, listaAlimentos)
+        val alimentoAdapterMerienda = AlimentoAdapterMerienda(this, listaAlimentos)
 
         // Obtén una referencia al ListView en tu diseño de actividad
-        val listView: ListView = findViewById(R.id.lstAlimentos)
+        val listView: ListView = findViewById(R.id.lstAlimentoMerienda)
 
         // Asigna el adaptador al ListView
-        listView.adapter = alimentoAdapterDesayuno
+        listView.adapter = alimentoAdapterMerienda
     }
-
     private fun obtenerListaDeAlimentos(): List<Alimento> {
         // Aquí puedes implementar la lógica para obtener la lista de alimentos de tu base de datos u otra fuente de datos
         // Por simplicidad, aquí se muestra una lista estática
@@ -84,15 +66,9 @@ class pantalla_alimentacion : AppCompatActivity() {
         alimentos.add(Alimento("Clara de Huevo Cocida","200g", "68"))
         alimentos.add(Alimento("Patatas Fritas", "Casero,100g","199"))
 
-
+        // Agrega más alimentos según tus necesidades
 
         return alimentos
     }
 
-
-
-
-
-
-
-    }
+}
