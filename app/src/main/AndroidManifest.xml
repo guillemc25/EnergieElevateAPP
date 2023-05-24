@@ -14,26 +14,24 @@
         android:theme="@style/Theme.EnergieElevate"
         tools:targetApi="31">
         <activity
-            android:name=".pantalla_cena"
+            android:name=".DetalleEjercicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_ejercicios"
             android:exported="false"
-
-            />
+            android:theme="@style/Theme.EnergieElevateEjercicios" />
+        <activity
+            android:name=".pantalla_cena"
+            android:exported="false" />
         <activity
             android:name=".pantalla_merienda"
-            android:exported="false"
-
-            />
+            android:exported="false" />
         <activity
             android:name=".pantalla_desayuno"
-            android:exported="false"
-
-            />
+            android:exported="false" />
         <activity
             android:name=".pantalla_alimentacion"
-            android:exported="false"
-
-            />
-
+            android:exported="false" />
         <activity
             android:name=".pantalla_principal"
             android:exported="false" />

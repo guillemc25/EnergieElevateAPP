@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/Rutinas"
-        android:icon="@drawable/icono_rutina"
+        android:icon="@drawable/news"
 
 
         />

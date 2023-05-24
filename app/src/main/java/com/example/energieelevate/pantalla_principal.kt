@@ -8,10 +8,9 @@ import android.text.*
 import android.text.method.LinkMovementMethod
 import android.text.style.*
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class pantalla_principal : AppCompatActivity() {
 
@@ -37,6 +36,36 @@ class pantalla_principal : AppCompatActivity() {
         val textViewCaloriasCero = findViewById<TextView>(R.id.txtCaloriasTotales)
 
         textViewCaloriasCero.text= "0"
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navPantalla_principal)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            // Aquí puedes realizar las acciones correspondientes según el elemento seleccionado
+            when (menuItem.itemId) {
+                R.id.Rutinas -> {
+                    // Acciones para el primer elemento del menú
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.pantallaPrincipal -> {
+                    // Acciones para el segundo elemento del menú
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.Ejercicio -> {
+
+                    val intent = Intent(this@pantalla_principal, activity_ejercicios::class.java)
+                    startActivity(intent)
+
+                    return@setOnNavigationItemSelectedListener true
+                }
+                // Agrega más casos según tus elementos del menú
+                else -> {
+                    // Acciones para otros elementos del menú (si los tienes)
+                    return@setOnNavigationItemSelectedListener false
+                }
+            }
+        }
+
+
 
     }
 
