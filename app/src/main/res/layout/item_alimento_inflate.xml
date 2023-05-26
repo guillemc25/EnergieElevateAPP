@@ -16,6 +16,7 @@
         android:layout_marginTop="31dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif-medium"
+        android:textColor="#F6F5F5"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Kcal"
+        android:textColor="#F8F8F8"
         app:layout_constraintStart_toEndOf="@+id/txtCalorias"
         app:layout_constraintTop_toTopOf="parent" />
 

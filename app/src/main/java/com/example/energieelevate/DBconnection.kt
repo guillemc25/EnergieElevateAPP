@@ -42,8 +42,8 @@ import android.database.sqlite.SQLiteOpenHelper
                 "CREATE TABLE Ejercicio (" +
                         "IDejercicio INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Nombre_ejercicio TEXT," +
-                        "grupo_muscular TEXT," +
-                        "categoria INTEGER" +
+                        "Descripcion TEXT," +
+                        "categoria TEXT" +
                         ")"
             )
 

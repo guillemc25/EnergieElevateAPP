@@ -9,19 +9,36 @@
 
 
     <TextView
-        android:id="@+id/TxtCaloriasQuemadas"
-        android:layout_width="184dp"
-        android:layout_height="142dp"
+        android:id="@+id/txtMinutosEjercicio"
+        android:layout_width="152dp"
+        android:layout_height="67dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/background_rounded"
         android:gravity="center"
         android:text="0"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toEndOf="@+id/txtCaloriasTotales"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TxtCaloriasQuemadas" />
+
+    <TextView
+        android:id="@+id/TxtCaloriasQuemadas"
+        android:layout_width="152dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/background_rounded"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@+id/txtCaloriasTotales"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/txtComida_cena"
@@ -166,13 +183,13 @@
         android:layout_width="184dp"
         android:layout_height="142dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/background_rounded"
         android:gravity="center"
         android:text="0"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navPantalla_principal"
@@ -194,11 +211,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"
         android:text="Calorias Consumidas:"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/txtCaloriasTotales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -206,9 +221,9 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="56dp"
         android:text="Calorias Quemadas:"
         android:textColor="#FDF9F9"
         app:layout_constraintEnd_toEndOf="parent"
