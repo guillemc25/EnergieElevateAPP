@@ -17,8 +17,10 @@ class pantalla_principal : AppCompatActivity() {
 
     var caloriasTotales=0;
     var nombresConcatenados="";
-
-
+    var DuracionMinutos = 0;
+    var CalQuemadas=0;
+    private lateinit var txtMinutos: TextView
+    private lateinit var txtCaloriasQuemadas: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,15 +29,14 @@ class pantalla_principal : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-
         agregarIconoClickeableDesayuno()
         agregarIconoClickeableComida()
         agregarIconoClickeableMerienda()
         agregarIconoClickeableCena()
 
-        val textViewCaloriasCero = findViewById<TextView>(R.id.txtCaloriasTotales)
+        /*val textViewCaloriasCero = findViewById<TextView>(R.id.txtCaloriasTotales)
 
-        textViewCaloriasCero.text= "0"
+        textViewCaloriasCero.text= "0"*/
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navPantalla_principal)
 
@@ -57,7 +58,7 @@ class pantalla_principal : AppCompatActivity() {
 
                     return@setOnNavigationItemSelectedListener true
                 }
-                // Agrega más casos según tus elementos del menú
+
                 else -> {
                     // Acciones para otros elementos del menú (si los tienes)
                     return@setOnNavigationItemSelectedListener false
@@ -190,6 +191,16 @@ class pantalla_principal : AppCompatActivity() {
         caloriasTotales = sumaCaloriasDesayuno + sumaCaloriasComida + sumaCaloriasMerienda + sumaCaloriasCena
 
         textViewCalorias.text = caloriasTotales.toString()
+
+        txtCaloriasQuemadas= findViewById(R.id.TxtCaloriasQuemadas)
+
+        val CaloriasQuemadas = getSharedPreferences("CaloriasQuemadas", MODE_PRIVATE)
+        val CalQuemadas = CaloriasQuemadas.getInt("CaloriasQuemadas", 0)
+
+        txtCaloriasQuemadas.text = CalQuemadas.toString()
+
+
+
     }
 
     fun RecogerNombreALimentos(){
@@ -219,11 +230,20 @@ class pantalla_principal : AppCompatActivity() {
 
 
     }
+    fun RecogerMinutos(){
+        txtMinutos = findViewById(R.id.txtMinutosEjercicio)
+        val duracionMinutos = getSharedPreferences("DuracionMinutos", MODE_PRIVATE)
+        DuracionMinutos = duracionMinutos.getInt("DuracionMinutos", 0)
+
+        txtMinutos.text = DuracionMinutos.toString() + " min"
+    }
 
     override fun onResume() {
         super.onResume()
         RecogerCalorias()
         RecogerNombreALimentos()
+        RecogerMinutos()
+
 
 
     }

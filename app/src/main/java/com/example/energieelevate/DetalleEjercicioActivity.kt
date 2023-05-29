@@ -16,6 +16,7 @@ import  com.example.energieelevate.Ejercicio
 class DetalleEjercicioActivity : AppCompatActivity() {
     private lateinit var editDuracion: EditText
     private lateinit var editCalorias: EditText
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,8 +60,6 @@ class DetalleEjercicioActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val nombreEjercicio = sharedPreferences.getString("nombreEjercicio", "")
 
-        Toast.makeText(this,nombreEjercicio, Toast.LENGTH_SHORT).show()
-        // Mostrar el nombre del ejercicio en un TextView
         txtNombreEjercicio.text = nombreEjercicio
     }
     private fun calcularCalorias() {
@@ -68,13 +67,26 @@ class DetalleEjercicioActivity : AppCompatActivity() {
 
         val duracionMinutos = editDuracion.text.toString().toIntOrNull()
 
+
+
         if (duracionMinutos != null) {
+            //Ponemos la duración en un sharedPrefrences para guardarlo en la pantalla principal
+            val DuracionMinutos = getSharedPreferences("DuracionMinutos", Context.MODE_PRIVATE)
+            val editor = DuracionMinutos.edit()
+            editor.putInt("DuracionMinutos", duracionMinutos)
+            editor.apply()
+
             val sharedPreferences = getSharedPreferences("CaloriasEjercicio", Context.MODE_PRIVATE)
             val ejercicioSeleccionadoCalorias= sharedPreferences.getInt("CaloriasEjercicio", 0)
 
             if ( ejercicioSeleccionadoCalorias != null) {
                 // Realizar el cálculo de las calorías basado en la duración y las calorías por minuto del ejercicio
                 val calorias = duracionMinutos *  ejercicioSeleccionadoCalorias
+                //Recogemos Calorias Quemadas para visualizarlas
+                val CaloriasQuemadas = getSharedPreferences("CaloriasQuemadas", Context.MODE_PRIVATE)
+                val editor = CaloriasQuemadas.edit()
+                editor.putInt("CaloriasQuemadas", calorias)
+                editor.apply()
 
                 // Mostrar el resultado en el EditText
                 editCalorias.setText(calorias.toString())

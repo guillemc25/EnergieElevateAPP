@@ -90,11 +90,6 @@ class activity_ejercicios : AppCompatActivity() {
 
 
 
-
-
-
-
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.filtro_ejercicios, menu)
         return true
