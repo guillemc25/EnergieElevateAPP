@@ -11,19 +11,20 @@
         android:id="@+id/lstAlimentos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <Button
         android:id="@+id/btn_volver_pp"
-        android:layout_width="41dp"
-        android:layout_height="29dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/flecha_negra_izquierda"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="Comida"
-        android:textSize="30sp"
+        android:textColor="#9E9E9E"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_volver_pp" />
 

@@ -34,7 +34,7 @@
         android:background="@drawable/background_rounded"
         android:gravity="center"
         android:text="0"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toEndOf="@+id/txtCaloriasTotales"
@@ -187,7 +187,7 @@
         android:background="@drawable/background_rounded"
         android:gravity="center"
         android:text="0"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 

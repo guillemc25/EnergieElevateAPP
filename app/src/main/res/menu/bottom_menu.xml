@@ -3,20 +3,21 @@
 
 
     <item
-        android:id="@+id/Rutinas"
+        android:id="@+id/Noticias"
         android:icon="@drawable/news"
 
 
-        />
+        android:title="Noticias" />
 
     <item
         android:id="@+id/pantallaPrincipal"
         android:icon="@drawable/icono_pantalla_principal"
-        />
+        android:title="Inicio" />
 
     <item
         android:id="@+id/Ejercicio"
         android:icon="@drawable/icono_ejercicio"
-      />
+        android:title="Ejercicio
+" />
 </menu>
 

@@ -43,7 +43,9 @@ class pantalla_principal : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             // Aquí puedes realizar las acciones correspondientes según el elemento seleccionado
             when (menuItem.itemId) {
-                R.id.Rutinas -> {
+                R.id.Noticias -> {
+                    val intent = Intent(this@pantalla_principal, activity_noticias::class.java)
+                    startActivity(intent)
                     // Acciones para el primer elemento del menú
                     return@setOnNavigationItemSelectedListener true
                 }
@@ -190,14 +192,14 @@ class pantalla_principal : AppCompatActivity() {
 
         caloriasTotales = sumaCaloriasDesayuno + sumaCaloriasComida + sumaCaloriasMerienda + sumaCaloriasCena
 
-        textViewCalorias.text = caloriasTotales.toString()
+        textViewCalorias.text = caloriasTotales.toString() + " Kcal"
 
         txtCaloriasQuemadas= findViewById(R.id.TxtCaloriasQuemadas)
 
         val CaloriasQuemadas = getSharedPreferences("CaloriasQuemadas", MODE_PRIVATE)
         val CalQuemadas = CaloriasQuemadas.getInt("CaloriasQuemadas", 0)
 
-        txtCaloriasQuemadas.text = CalQuemadas.toString()
+        txtCaloriasQuemadas.text = CalQuemadas.toString() + " Kcal"
 
 
 
