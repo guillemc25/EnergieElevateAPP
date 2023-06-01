@@ -74,6 +74,16 @@ import android.database.sqlite.SQLiteOpenHelper
                         ")"
             )
 
+            db?.execSQL(
+                "CREATE TABLE Noticias (" +
+                        "IDnoticia INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "Titulo TEXT," +
+                        "Descripcion TEXT," +
+                        "Fecha TEXT," +
+                        "Imagen INTEGER" +
+                        ")"
+            )
+
 
 
 

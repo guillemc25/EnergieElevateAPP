@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class activity_ejercicios : AppCompatActivity() {
 
@@ -85,6 +86,11 @@ class activity_ejercicios : AppCompatActivity() {
 
         // Establecer el adaptador en el ListView
         listViewEjercicios.adapter = adapter
+
+
+
+
+
 
     }
 

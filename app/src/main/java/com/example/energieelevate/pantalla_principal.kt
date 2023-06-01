@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class pantalla_principal : AppCompatActivity() {
+ open class pantalla_principal : AppCompatActivity() {
 
 
     var caloriasTotales=0;
@@ -46,7 +46,6 @@ class pantalla_principal : AppCompatActivity() {
                 R.id.Noticias -> {
                     val intent = Intent(this@pantalla_principal, activity_noticias::class.java)
                     startActivity(intent)
-                    // Acciones para el primer elemento del menú
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.pantallaPrincipal -> {

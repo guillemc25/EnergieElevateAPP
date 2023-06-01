@@ -3,16 +3,13 @@
 
 
     <item
-        android:id="@+id/Noticias"
-        android:icon="@drawable/news"
-
-
-        android:title="Noticias" />
-
-    <item
         android:id="@+id/pantallaPrincipal"
         android:icon="@drawable/icono_pantalla_principal"
         android:title="Inicio" />
+    <item
+        android:id="@+id/Noticias"
+        android:icon="@drawable/news"
+        android:title="Noticias" />
 
     <item
         android:id="@+id/Ejercicio"
