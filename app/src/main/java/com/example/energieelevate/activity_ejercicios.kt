@@ -14,7 +14,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class activity_ejercicios : AppCompatActivity() {
 
     private lateinit var listViewEjercicios: ListView
-    private lateinit var btnRegresarEjercicio: Button
     private  lateinit var  adapter: EjercicioAdapter
     private  lateinit var  ejercicios : List<Ejercicio>
     private lateinit var ejercicioSeleccionado: Ejercicio
@@ -22,12 +21,7 @@ class activity_ejercicios : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ejercicios)
 
-        btnRegresarEjercicio = findViewById(R.id.btnRegresarEjercicios)
-        btnRegresarEjercicio.setOnClickListener {
 
-            val intent = Intent(this, pantalla_principal::class.java)
-            startActivity(intent)
-        }
 
         listViewEjercicios = findViewById(R.id.listViewEjercicios)
 
@@ -112,9 +106,15 @@ class activity_ejercicios : AppCompatActivity() {
                 filtrarPorCategoria("Musculación")
                 true
             }
+            R.id.boton_volver_ejercicios -> {
+                val intent = Intent(this, pantalla_principal::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
     fun filtrarPorCategoria(categoria: String) {
         val ejerciciosFiltrados = ejercicios.filter { ejercicio ->
             ejercicio.Categoria == categoria

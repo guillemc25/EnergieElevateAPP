@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/boton_volver_ejercicios"
+        android:icon="@drawable/flecha_negra_izquierda"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
 
         android:id="@+id/action_filter"
         android:title="FILTRO"
