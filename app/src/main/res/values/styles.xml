@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EstiloFondoGris" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros atributos de estilo -->
+
+        <!-- Añade este atributo para personalizar el color de fondo del ActionBar -->
+        <item name="android:background">#4A4C51</item>
+    </style>
+
+
+</resources>

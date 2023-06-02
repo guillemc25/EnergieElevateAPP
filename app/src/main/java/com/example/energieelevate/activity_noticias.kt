@@ -2,8 +2,11 @@ package com.example.energieelevate
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,17 +45,24 @@ class activity_noticias : AppCompatActivity() {
                 "Además, se enfatiza que la actividad física no se limita solo a las sesiones programadas de ejercicio en el gimnasio. Se incluyen todas las actividades que implican un gasto energético superior al metabolismo basal. Ir a la compra caminando, realizar tareas domésticas activas y otras actividades cotidianas también contribuyen a mantenernos en movimiento y mejorar nuestra salud en general.\n" +
                 "\n" +
                 "La tecnología ha desempeñado un papel fundamental en la promoción de la actividad física. En la actualidad, los dispositivos como las pulseras de actividad y los relojes inteligentes se han vuelto muy populares entre el público no especializado. Estos dispositivos utilizan sensores como podómetros y acelerómetros para medir la actividad física realizada a lo largo del día. Su operatividad, tamaño y precio asequible los convierten en herramientas prácticas y accesibles para el seguimiento personal de la actividad física.",
-                fechaActual, R.drawable.noticia1)
-         val noticia2 = Noticia("Título 2", "Descripción 2", "2023-05-19", R.drawable.google)
-         /*val noticia3 = Noticia("Título 3", "Descripción 3", "2023-05-20", R.drawable.imagen3)
+                "2023-06-01", R.drawable.noticia1)
+        val noticia2 = Noticia("Los mejores mini ‘steppers’ para ejercitar piernas y glúteos", "Entre las múltiples máquinas para ejercitarse desde casa que ‘imitan’ a las versiones más profesionales de los gimnasios se encuentran los steppers. También conocidas como máquinas escaladoras, reproducen el movimiento que se lleva a cabo al subir una escalera. De esta manera, se trabaja el tren inferior del cuerpo de forma muy completa, incluidos los tobillos, rodillas, caderas y glúteos. Incluso ayuda a fortalecer los abdominales inferiores y la zona lumbar.\n" +
+                "\n" +
+                "Los modelos más básicos, destinados a principiantes, son los conocidos como mini steppers, que hemos elegido para esta comparativa. Este tipo de máquinas, muy compactas y fáciles de guardar, favorecen la quema de grasa, aunque sus efectos se notan en mayor o menor medida en función de la resistencia que son capaces de ofrecer. Con la ventaja, además, de que cuidan las articulaciones. Se componen de unos pedales que se mueven en vertical (y no en círculos como los de las bicicletas) situados en una base antideslizante que también cuenta con un pequeño monitor para realizar un seguimiento de los aspectos esenciales del ejercicio (número de pasos, calorías quemadas…). Algunos modelos incluso poseen anillas para conectar cintas con las que ejercitar a la vez los brazos y hombros.",
+            "2023-06-02", R.drawable.noticia2)
 
-        */
+        val noticia3 = Noticia("Protege tus oídos del frío con estas diademas térmicas para ‘running’ y deportes al aire libre",
+            "Los oídos son una de las zonas del cuerpo más sensibles y propensas a infectarse al tener un resfriado o si se ven expuestas a temperaturas muy bajas. Por ello, es importante protegerlos en caso de que vayas a pasar mucho tiempo al aire libre, ya sea si decides optar por hacer una travesía en la montaña, al jugar un partido de fútbol un día de mucho frío o si practicas running.\n" +
+                    "\n" +
+                    "Y es que no hay excusa, ya que existe una solución práctica y muy económica para proteger los oídos del frío: las diademas térmicas. Se trata de bandas elásticas confeccionadas con forros térmicos y transpirables, que funcionan como cintas de pelo, manteniendo el cabello y el sudor alejado del rostro, y además retienen el calor como unas orejeras. En esta selección puedes encontrar cuatro modelos disponibles en Amazon, con una relación calidad-precio excepcional y de marcas tan reconocidas como Nike o Columbia. ¡Descúbrelas!",
+            "2023-06-02", R.drawable.noticias3)
+
 
 
 
         listaNoticias.add(noticia1)
         listaNoticias.add(noticia2)
-        //listaNoticias.add(noticia3)*/
+        listaNoticias.add(noticia3)
 
 // Pasar la lista de noticias al adaptador
         noticiasAdapter = NoticiasAdapter(listaNoticias)
@@ -62,8 +72,22 @@ class activity_noticias : AppCompatActivity() {
 
     }
 
-    private fun GuardarNoticiasBD(){
-
-
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.noticias_menu, menu)
+        return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.boton_volver_noticias -> {
+                // Acción a realizar al hacer clic en el botón del ActionBar
+                val intent = Intent(this, pantalla_principal::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }

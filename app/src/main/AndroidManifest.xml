@@ -13,14 +13,15 @@
         tools:targetApi="31">
         <activity
             android:name=".activity_noticias"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/EstiloFondoGris"/>
         <activity
             android:name=".DetalleEjercicioActivity"
             android:exported="false" />
         <activity
             android:name=".activity_ejercicios"
             android:exported="false"
-            android:theme="@style/Theme.EnergieElevateEjercicios" />
+            android:theme="@style/EstiloFondoGris" />
         <activity
             android:name=".pantalla_cena"
             android:exported="false" />

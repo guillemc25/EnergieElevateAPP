@@ -69,7 +69,7 @@ import androidx.appcompat.app.AppCompatActivity
 
              db.close();
 
-             val i = Intent(this, activity_pregunta_uno::class.java)
+             val i = Intent(this, MainActivity::class.java)
              startActivity(i)
          }
      }

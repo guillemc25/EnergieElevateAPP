@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
+
         android:id="@+id/action_filter"
-        android:title="Filtrar"
+        android:title="FILTRO"
         app:showAsAction="always">
         <menu>
             <group android:id="@+id/group_category">
                 <item
                     android:id="@+id/action_aerobic"
-                    android:title="Aeróbicos" />
+                    android:title="Aeróbicos"
+                    app:showAsAction="ifRoom" />
                 <item
                     android:id="@+id/action_strength"
-                    android:title="Musculación" />
+                    android:title="Musculación"
+                    app:showAsAction="ifRoom" />
             </group>
         </menu>
     </item>
+
 </menu>
+
