@@ -1,5 +1,6 @@
 package com.example.energieelevate
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,10 +18,30 @@ class activity_ejercicios : AppCompatActivity() {
     private  lateinit var  adapter: EjercicioAdapter
     private  lateinit var  ejercicios : List<Ejercicio>
     private lateinit var ejercicioSeleccionado: Ejercicio
+    private lateinit var btnEliminarEjercicio: Button
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ejercicios)
 
+        btnEliminarEjercicio = findViewById(R.id.btnEliminarEjercicio)
+
+        btnEliminarEjercicio.setOnClickListener {
+
+            //Ponemos la duración en un sharedPrefrences para guardarlo en la pantalla principal
+            val DuracionMinutos = getSharedPreferences("DuracionMinutos", Context.MODE_PRIVATE)
+            val editor1 = DuracionMinutos.edit()
+            editor1.clear()
+            editor1.apply()
+
+            val CaloriasQuemadas = getSharedPreferences("CaloriasQuemadas", Context.MODE_PRIVATE)
+            val editor = CaloriasQuemadas.edit()
+            editor.clear()
+            editor.apply()
+
+            Toast.makeText(this,"Ejercicio Eliminado", Toast.LENGTH_LONG).show()
+
+        }
 
 
         listViewEjercicios = findViewById(R.id.listViewEjercicios)
